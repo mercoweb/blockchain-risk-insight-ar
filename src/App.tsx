@@ -4,6 +4,7 @@ import { Hero } from './components/home/Hero';
 import { InvestmentModels } from './components/home/InvestmentModels';
 import { RegulatoryAR } from './components/home/RegulatoryAR';
 import { RiskDashboard } from './components/home/RiskDashboard';
+import { NexusAtlantis } from './components/home/NexusAtlantis';
 import { Footer } from './components/home/Footer';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <main>
         <Hero />
         <InvestmentModels />
+        <NexusAtlantis />
         <RegulatoryAR />
         <RiskDashboard />
       </main>

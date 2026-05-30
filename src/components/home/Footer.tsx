@@ -36,8 +36,8 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-6">Plataforma</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Proyectos Activos</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Cómo Funciona</a></li>
+              <li><a href="#models" className="hover:text-primary transition-colors">Proyectos Activos</a></li>
+              <li><a href="#atlantis" className="hover:text-primary transition-colors">Nexus Atlantis</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Nexus Token (NXT)</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Gobernanza</a></li>
               <li><a href="#" className="hover:text-primary transition-colors flex items-center gap-1">Explorer <ExternalLink className="h-3 w-3" /></a></li>
