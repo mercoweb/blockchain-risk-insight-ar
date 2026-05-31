@@ -6,6 +6,7 @@ const navItems = [
   { name: 'Soluciones', href: '#hero' },
   { name: 'Modelos', href: '#models' },
   { name: 'Curso', href: '#curso' },
+  { name: 'NEXUS TOK', href: '#nexus-tok' },
   { name: 'Atlantis', href: '#atlantis' },
   { name: 'Regulación', href: '#regulatory' },
   { name: 'Riesgos', href: '#risks' },

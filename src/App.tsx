@@ -6,6 +6,7 @@ import { RegulatoryAR } from './components/home/RegulatoryAR';
 import { RiskDashboard } from './components/home/RiskDashboard';
 import { NexusAtlantis } from './components/home/NexusAtlantis';
 import { CourseProgram } from './components/home/CourseProgram';
+import { NexusTok } from './components/home/NexusTok';
 import { Footer } from './components/home/Footer';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Hero />
         <InvestmentModels />
         <CourseProgram />
+        <NexusTok />
         <NexusAtlantis />
         <RegulatoryAR />
         <RiskDashboard />
