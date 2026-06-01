@@ -295,11 +295,11 @@ export function NexusTok() {
                 <CardContent className="p-8 space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="h-14 w-14 rounded-2xl bg-primary/20 flex items-center justify-center text-xl font-bold text-primary shrink-0">
-                      MC
+                      LC
                     </div>
                     <div>
-                      <h4 className="font-bold text-foreground text-lg">Miguel Caballero</h4>
-                      <p className="text-sm text-primary font-medium">CEO de Tutellus</p>
+                      <h4 className="font-bold text-foreground text-lg">Luis Cafferat</h4>
+                      <p className="text-sm text-primary font-medium">CoFundador de Urbantech HL</p>
                     </div>
                   </div>
                   <Badge className="bg-primary/10 text-primary border-primary/20 text-xs">
