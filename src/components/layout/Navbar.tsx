@@ -5,6 +5,7 @@ import { Menu, X, Shield, Globe, Cpu } from 'lucide-react';
 const navItems = [
   { name: 'Soluciones', href: '#hero' },
   { name: 'Modelos', href: '#models' },
+  { name: 'Tecnología', href: '#tecnologia' },
   { name: 'Curso', href: '#curso' },
   { name: 'NEXUS TOK', href: '#nexus-tok' },
   { name: 'Atlantis', href: '#atlantis' },
