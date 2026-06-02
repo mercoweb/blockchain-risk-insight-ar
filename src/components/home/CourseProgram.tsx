@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge, Button, Card, CardContent } from '@blinkdotnew/ui';
 import { BookOpen, Code2, Gavel, Coins, CheckCircle2, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { RegistrationModal } from './RegistrationModal';
 
 const modules = [
   {
@@ -27,6 +28,8 @@ const modules = [
 ];
 
 export function CourseProgram() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   return (
     <section id="curso" className="py-24 bg-card/10 relative">
       <div className="container mx-auto px-4 md:px-6">
@@ -73,7 +76,11 @@ export function CourseProgram() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-magenta text-white hover:bg-magenta/90 gap-2 h-14 px-8 shadow-lg shadow-magenta/20">
+              <Button 
+                size="lg" 
+                className="bg-magenta text-white hover:bg-magenta/90 gap-2 h-14 px-8 shadow-lg shadow-magenta/20"
+                onClick={() => setIsModalOpen(true)}
+              >
                 Inscribirme al Programa <GraduationCap className="h-5 w-5" />
               </Button>
               <div className="flex flex-col justify-center">
@@ -110,6 +117,12 @@ export function CourseProgram() {
           </div>
         </div>
       </div>
+
+      <RegistrationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        programTitle="Programa de Especialización Web3"
+      />
     </section>
   );
 }

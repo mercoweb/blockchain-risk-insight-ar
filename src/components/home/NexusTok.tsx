@@ -15,6 +15,7 @@ import {
   Star,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { RegistrationModal } from './RegistrationModal';
 
 const differentiators = [
   {
@@ -70,6 +71,8 @@ const benefits = [
 ];
 
 export function NexusTok() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   return (
     <section id="nexus-tok" className="py-24 relative overflow-hidden">
       {/* Background glow */}
@@ -130,6 +133,7 @@ export function NexusTok() {
             <Button
               size="lg"
               className="bg-primary text-white hover:bg-primary/90 gap-2 h-14 px-10 shadow-lg shadow-primary/30 text-base font-bold"
+              onClick={() => setIsModalOpen(true)}
             >
               QUIERO LANZAR MI PROYECTO WEB3
               <Rocket className="h-5 w-5" />
@@ -405,6 +409,7 @@ export function NexusTok() {
             <Button
               size="lg"
               className="bg-primary text-white hover:bg-primary/90 gap-2 h-14 px-10 shadow-lg shadow-primary/30 text-base font-bold"
+              onClick={() => setIsModalOpen(true)}
             >
               QUIERO LANZAR MI PROYECTO WEB3
               <Rocket className="h-5 w-5" />
@@ -412,6 +417,12 @@ export function NexusTok() {
           </div>
         </motion.div>
       </div>
+
+      <RegistrationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        programTitle="Máster en Tokenización + Incubación Web3"
+      />
     </section>
   );
 }
