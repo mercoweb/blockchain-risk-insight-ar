@@ -1,16 +1,17 @@
 import React from 'react';
 import { Button, cn } from '@blinkdotnew/ui';
 import { Menu, X, Shield, Globe, Cpu } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 const navItems = [
-  { name: 'Soluciones', href: '#hero' },
-  { name: 'Modelos', href: '#models' },
-  { name: 'Tecnología', href: '#tecnologia' },
-  { name: 'Curso', href: '#curso' },
-  { name: 'NEXUS TOK', href: '#nexus-tok' },
-  { name: 'Atlantis', href: '#atlantis' },
-  { name: 'Regulación', href: '#regulatory' },
-  { name: 'Riesgos', href: '#risks' },
+  { name: 'Soluciones', href: '/#hero' },
+  { name: 'Modelos', href: '/#models' },
+  { name: 'Tecnología', href: '/#tecnologia' },
+  { name: 'Curso', href: '/#curso' },
+  { name: 'NEXUS TOK', href: '/#nexus-tok' },
+  { name: 'Atlantis', href: '/#atlantis' },
+  { name: 'Regulación', href: '/#regulatory' },
+  { name: 'Riesgos', href: '/#risks' },
 ];
 
 export function Navbar() {
@@ -36,14 +37,14 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
               <Cpu className="h-6 w-6 text-primary" />
             </div>
             <span className="text-xl font-bold tracking-tighter text-foreground">
               NEXUS <span className="text-secondary">BLOCKCHAIN</span> AR
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -56,9 +57,11 @@ export function Navbar() {
                 {item.name}
               </a>
             ))}
-            <Button variant="default" className="shadow-lg shadow-primary/20">
-              Invertir Ahora
-            </Button>
+            <Link to="/invertir">
+              <Button variant="default" className="shadow-lg shadow-primary/20">
+                Invertir Ahora
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -84,9 +87,11 @@ export function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" className="w-full">
-                Invertir Ahora
-              </Button>
+              <Link to="/invertir" onClick={() => setIsOpen(false)}>
+                <Button variant="default" className="w-full">
+                  Invertir Ahora
+                </Button>
+              </Link>
             </div>
           </div>
         )}

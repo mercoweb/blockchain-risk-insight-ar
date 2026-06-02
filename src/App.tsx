@@ -1,30 +1,55 @@
 import React from 'react';
+import { 
+  createRouter, 
+  createRoute, 
+  createRootRoute, 
+  RouterProvider, 
+  Outlet 
+} from '@tanstack/react-router';
 import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/home/Hero';
-import { InvestmentModels } from './components/home/InvestmentModels';
-import { RegulatoryAR } from './components/home/RegulatoryAR';
-import { RiskDashboard } from './components/home/RiskDashboard';
-import { NexusAtlantis } from './components/home/NexusAtlantis';
-import { CourseProgram } from './components/home/CourseProgram';
-import { NexusTok } from './components/home/NexusTok';
-import { SmartContractTech } from './components/home/SmartContractTech';
 import { Footer } from './components/home/Footer';
+import { Home } from './pages/Home';
+import { InvestmentProgram } from './pages/InvestmentProgram';
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground">
+// Create a root route
+const rootRoute = createRootRoute({
+  component: () => (
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground flex flex-col">
       <Navbar />
-      <main>
-        <Hero />
-        <InvestmentModels />
-        <SmartContractTech />
-        <CourseProgram />
-        <NexusTok />
-        <NexusAtlantis />
-        <RegulatoryAR />
-        <RiskDashboard />
-      </main>
+      <div className="flex-1">
+        <Outlet />
+      </div>
       <Footer />
     </div>
-  );
+  ),
+});
+
+// Create routes
+const indexRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/',
+  component: Home,
+});
+
+const investirRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/invertir',
+  component: InvestmentProgram,
+});
+
+// Create the route tree
+const routeTree = rootRoute.addChildren([indexRoute, investirRoute]);
+
+// Create the router
+const router = createRouter({ routeTree });
+
+// Register the router for type safety
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
